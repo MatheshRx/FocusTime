@@ -24,7 +24,7 @@ export const Timer = ({ minutes, isPassed, onEnd }) => {
   // };
   
   useEffect( () =>{
-    imillis === 0 && onEnd();
+    millis === 0 && onEnd();
     
   }, [millis]);
 

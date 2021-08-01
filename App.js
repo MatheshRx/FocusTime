@@ -14,7 +14,7 @@ export default function App() {
   const [focusHistory, setFocusHistory] = useState([]);
 
   const addFocusHistory = (foucusName, status) => {
-    setFocusHistory([...focusHistory, { foucusName, status }]);
+    setFocusHistory([...focusHistory, { key: String(Math.random()), foucusName, status }]);
   };
   const saveHistory = async () => {
     try {

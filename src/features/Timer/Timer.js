@@ -11,7 +11,6 @@ export const Timer = ({ minutes, isPassed, onEnd }) => {
     setMillis(
       (time) => {
         if (time === 0) {
-          onEnd();
           return time;
         }
         const timeLeft = time - 1000;
@@ -24,6 +23,10 @@ export const Timer = ({ minutes, isPassed, onEnd }) => {
   //   setMillis((time) => time === 0 ? time : time - 1000);
   // };
   
+  useEffect( () =>{
+    onEnd();
+  }, [millis]);
+
   useEffect( () =>{
     setMillis(minuteToMillis(minutes));
   }, [minutes]);
